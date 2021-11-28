@@ -15,7 +15,7 @@ class NetworkManager {
     
     var delegate: NetworkManagerDelegate?
 
-    func fetchHouses(id: Int) {
+    func fetchHouse(id: Int) {
         let apiUrl = "https://www.anapioficeandfire.com/api/houses/\(id)"
         guard let url = URL(string: apiUrl) else { return }
         
