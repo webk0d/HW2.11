@@ -15,8 +15,8 @@ class NetworkManager {
     
     var delegate: NetworkManagerDelegate?
 
-    func fetchHouse(id: Int) {
-        let apiUrl = "https://www.anapioficeandfire.com/api/houses/\(id)"
+    func fetchHouse() {
+        let apiUrl = "https://www.anapioficeandfire.com/api/houses/\(Int.random(in: 0...9))"
         guard let url = URL(string: apiUrl) else { return }
         
         let session = URLSession(configuration: .default)

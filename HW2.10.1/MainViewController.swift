@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func randomHouseButtonPressed(_ sender: UIButton) {
-        networkManager.fetchHouse(id: Int.random(in: 0...9))
+        networkManager.fetchHouse()
     }
     
 }
