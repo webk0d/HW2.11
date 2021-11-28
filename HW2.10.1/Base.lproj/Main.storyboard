@@ -1,24 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r5l-MC-5lg">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Main View Controller-->
+        <scene sceneID="gba-QJ-v9G">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="r5l-MC-5lg" customClass="MainViewController" customModule="HW2_10_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Paf-jz-498">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="night-king-with-white-walkers-artwork-iPhone-game-of-thrones-wallpaper" highlightedImage="night-king-with-white-walkers-artwork-iPhone-game-of-thrones-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="EE4-0D-BlM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dc8-kt-BQe">
+                                <rect key="frame" x="49" y="50" width="222.5" height="68"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random House" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9a-NT-a9w">
+                                        <rect key="frame" x="0.0" y="0.0" width="222.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <color key="highlightedColor" systemColor="secondarySystemBackgroundColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game of Thrones" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkn-Hd-oJE">
+                                        <rect key="frame" x="0.0" y="32" width="222.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <color key="highlightedColor" systemColor="secondarySystemBackgroundColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="msa-9L-Qo6">
+                                <rect key="frame" x="15" y="203" width="290" height="162.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Stark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHN-VO-r72">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="Papyrus-Condensed" family="Papyrus" pointSize="32"/>
+                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Region: North" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVd-Qy-R9R">
+                                        <rect key="frame" x="0.0" y="59.5" width="290" height="31"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
+                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coat of arms: Gray direwolf on a white-green background" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KRs-eM-W4b">
+                                        <rect key="frame" x="0.0" y="100.5" width="290" height="62"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
+                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NN-cG-dAE">
+                                <rect key="frame" x="82" y="436" width="156.5" height="43"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="8jB-gE-eEZ"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next Random House"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="randomHouseButtonPressed:" destination="r5l-MC-5lg" eventType="touchUpInside" id="Llh-rQ-7q4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZYq-Nl-rZS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EE4-0D-BlM" firstAttribute="top" secondItem="Paf-jz-498" secondAttribute="top" id="7OU-4J-q59"/>
+                            <constraint firstItem="dc8-kt-BQe" firstAttribute="top" secondItem="ZYq-Nl-rZS" secondAttribute="top" constant="50" id="7hw-Dg-dGm"/>
+                            <constraint firstItem="EE4-0D-BlM" firstAttribute="leading" secondItem="Paf-jz-498" secondAttribute="leading" id="BbF-hE-XpW"/>
+                            <constraint firstItem="7NN-cG-dAE" firstAttribute="centerX" secondItem="ZYq-Nl-rZS" secondAttribute="centerX" id="HJt-s6-4Ai"/>
+                            <constraint firstItem="ZYq-Nl-rZS" firstAttribute="bottom" secondItem="7NN-cG-dAE" secondAttribute="bottom" constant="89" id="HOm-n1-Jkt"/>
+                            <constraint firstAttribute="trailing" secondItem="EE4-0D-BlM" secondAttribute="trailing" id="PQb-9C-Cbq"/>
+                            <constraint firstItem="msa-9L-Qo6" firstAttribute="centerX" secondItem="ZYq-Nl-rZS" secondAttribute="centerX" id="SYu-QU-eUZ"/>
+                            <constraint firstItem="msa-9L-Qo6" firstAttribute="centerX" secondItem="ZYq-Nl-rZS" secondAttribute="centerX" id="V5G-1G-ci1"/>
+                            <constraint firstAttribute="bottom" secondItem="EE4-0D-BlM" secondAttribute="bottom" id="aRA-DV-dVX"/>
+                            <constraint firstItem="msa-9L-Qo6" firstAttribute="leading" secondItem="ZYq-Nl-rZS" secondAttribute="leading" constant="15" id="h3y-kg-AXe"/>
+                            <constraint firstItem="dc8-kt-BQe" firstAttribute="centerX" secondItem="ZYq-Nl-rZS" secondAttribute="centerX" id="ifM-Ek-opQ"/>
+                            <constraint firstItem="ZYq-Nl-rZS" firstAttribute="trailing" secondItem="msa-9L-Qo6" secondAttribute="trailing" constant="15" id="jsn-Ah-gAM"/>
+                            <constraint firstItem="msa-9L-Qo6" firstAttribute="centerY" secondItem="ZYq-Nl-rZS" secondAttribute="centerY" id="uy9-hy-gXD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="houseCoatOfArmsLabel" destination="KRs-eM-W4b" id="FeJ-sX-BYI"/>
+                        <outlet property="houseNameLabel" destination="IHN-VO-r72" id="nvW-fH-vDD"/>
+                        <outlet property="houseRegionLabel" destination="OVd-Qy-R9R" id="oJr-vp-DdY"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSZ-lG-55y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="120" y="80.281690140845072"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="night-king-with-white-walkers-artwork-iPhone-game-of-thrones-wallpaper" width="1125" height="2436"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
