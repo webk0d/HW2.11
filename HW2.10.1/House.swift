@@ -11,10 +11,4 @@ struct House : Decodable {
     let region: String
     let coatOfArms: String
     
-    init?(house: House) {
-        name = house.name
-        region = house.region
-        coatOfArms = house.coatOfArms
-    }
-    
 }

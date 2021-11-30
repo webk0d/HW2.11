@@ -7,38 +7,41 @@
 
 import Foundation
 
-protocol NetworkManagerDelegate {
-    func updateInterface(_: NetworkManager, with house: House)
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
 }
 
 class NetworkManager {
     
-    var delegate: NetworkManagerDelegate?
-
-    func fetchHouse() {
-        let apiUrl = "https://www.anapioficeandfire.com/api/houses/\(Int.random(in: 0...9))"
-        guard let url = URL(string: apiUrl) else { return }
-        
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: url) { data, _ , error in
-            if let data = data {
-                if let house = self.parseJACON(with: data) {
-                    self.delegate?.updateInterface(self, with: house)
-                }
-            }
-        }
-        task.resume()
-    }
+    static let shared = NetworkManager()
     
-    private func parseJACON(with data: Data) -> House? {
-        let decoder = JSONDecoder()
-        do {
-            let houseDecode = try decoder.decode(House.self, from: data)
-            guard let house = House(house: houseDecode) else { return nil }
-            return house
-        } catch let error as NSError {
-            print(error.localizedDescription)
+    private init() {}
+
+    func fetchHouse(with completion: @escaping(Result<House, NetworkError>) -> Void) {
+        guard let url = URL(string: "https://www.anapioficeandfire.com/api/houses/\(Int.random(in: 0...9))") else {
+            completion(.failure(.invalidURL))
+            return
         }
-        return nil
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                completion(.failure(.noData))
+                print(error?.localizedDescription ?? "No description error")
+                return
+            }
+            do {
+                let house = try
+                JSONDecoder().decode(House.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(house))
+                }
+            } catch let error {
+                completion(.failure(.decodingError))
+                print(error)
+            }
+            
+        }.resume()
     }
 }
