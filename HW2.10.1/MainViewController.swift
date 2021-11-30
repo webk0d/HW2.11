@@ -28,8 +28,8 @@ class MainViewController: UIViewController {
             case .success(let house):
                 self.spinnerView?.stopAnimating()
                 self.houseNameLabel.text = house.name
-                self.houseRegionLabel.text = "Region: \(house.region)"
-                self.houseCoatOfArmsLabel.text = "Coat of Arms: \(house.coatOfArms)"
+                self.houseRegionLabel.text = "Region: \(house.region ?? "" )"
+                self.houseCoatOfArmsLabel.text = "Coat of Arms: \(house.coatOfArms ?? "" )"
             case .failure(let error):
                 print(error)
             }

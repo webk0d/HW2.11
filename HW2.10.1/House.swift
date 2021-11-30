@@ -7,8 +7,14 @@
 
 struct House : Decodable {
 
-    let name: String
-    let region: String
-    let coatOfArms: String
+    let name: String?
+    let region: String?
+    let coatOfArms: String?
+    
+    init(houseData: [String: Any]) {
+        name = houseData["name"] as? String
+        region = houseData["region"] as? String
+        coatOfArms = houseData["coatOfArms"] as? String
+    }
     
 }

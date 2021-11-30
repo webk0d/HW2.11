@@ -6,10 +6,10 @@
 //
 
 import Foundation
+import Alamofire
 
 enum NetworkError: Error {
     case invalidURL
-    case noData
     case decodingError
 }
 
@@ -18,30 +18,30 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     private init() {}
-
+    
     func fetchHouse(with completion: @escaping(Result<House, NetworkError>) -> Void) {
-        guard let url = URL(string: "https://www.anapioficeandfire.com/api/houses/\(Int.random(in: 0...9))") else {
+        guard let url = URL(string: "https://www.anapioficeandfire.com/api/houses/\(Int.random(in: 1...9))") else {
             completion(.failure(.invalidURL))
             return
         }
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                completion(.failure(.noData))
-                print(error?.localizedDescription ?? "No description error")
-                return
-            }
-            do {
-                let house = try
-                JSONDecoder().decode(House.self, from: data)
-                DispatchQueue.main.async {
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    guard let houseData = value as? [String: Any] else {
+                        completion(.failure(.decodingError))
+                        return
+                    }
+                    
+                    let house = House(houseData: houseData)
                     completion(.success(house))
+                case .failure:
+                    completion(.failure(.decodingError))
                 }
-            } catch let error {
-                completion(.failure(.decodingError))
-                print(error)
             }
-            
-        }.resume()
+        
+        
     }
 }
